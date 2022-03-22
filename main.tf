@@ -22,6 +22,5 @@ resource "aws_instance" "web" {
 }
 
 resource "aws_s3_bucket" "bucket" {
-  count  = 2
-  bucket = "ardih-terraform-bucket-${count.index}"
+  bucket = "ardih-terraform-bucket"
 }
