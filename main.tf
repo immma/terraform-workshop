@@ -1,5 +1,5 @@
 provider "aws" {
-  region     = "ap-southeast-2"
+  region = "ap-southeast-2"
 }
 
 data "aws_ami" "amazon-linux-2" {
@@ -22,5 +22,6 @@ resource "aws_instance" "web" {
 }
 
 resource "aws_s3_bucket" "bucket" {
-  bucket = "ardih-terraform-bucket"
+  count  = 2
+  bucket = "ardih-terraform-bucket-${count.index}"
 }
