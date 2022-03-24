@@ -13,14 +13,16 @@ data "aws_ami" "amazon-linux-2" {
 }
 
 resource "aws_instance" "web" {
+  count = 2
   ami           = data.aws_ami.amazon-linux-2.id
   instance_type = "t3.micro"
 
   tags = {
-    Name = "terraform-workshop"
+    Name = "terraform-workshop-${count.index}"
   }
 }
 
 resource "aws_s3_bucket" "bucket" {
-  bucket = "ardih-terraform-workshop"
+  count = 2
+  bucket = "ardih-terraform-workshop-${count.index}"
 }
