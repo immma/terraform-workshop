@@ -24,5 +24,5 @@ provider "aws" {
 
 resource "aws_s3_bucket" "bucket" {
   count = 2
-  bucket = "ardih-terraform-25may2022-${count.index}"
+  bucket = "ardih-terraform-berubah-${count.index}"
 }
