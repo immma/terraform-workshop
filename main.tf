@@ -23,6 +23,6 @@ provider "aws" {
 # }
 
 resource "aws_s3_bucket" "bucket" {
-  count = 2
+  count = 4
   bucket = "ardih-terraform-berubah-${count.index}"
 }
