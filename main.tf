@@ -24,5 +24,5 @@ provider "aws" {
 
 resource "aws_s3_bucket" "bucket" {
   count = 4
-  bucket = "ardih-terraform-berubah-${count.index}"
+  bucket = "Finox-test-${count.index}"
 }
